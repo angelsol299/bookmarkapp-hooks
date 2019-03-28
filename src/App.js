@@ -37,6 +37,9 @@ const App = () => {
               </label>
               <input
                 value={newCard.linkName}
+                onChange={e =>
+                  setNewCard({ ...newCard, linkName: e.currentTarget.value })
+                }
                 type="text"
                 name="linkTitle"
                 minLength="1"
@@ -59,7 +62,7 @@ const App = () => {
                 placeholder="https://example.com/"
               />
             </div>
-            <button>Add</button>
+            <button onClick={() => dispatchCardSet(newCard)}>Add</button>
           </form>
         </div>
         <div className="rightContent">
