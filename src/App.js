@@ -8,6 +8,13 @@ const App = () => {
 
   const [newCard, setNewCard] = useState({ linkName: "", linkHref: "" });
 
+  const dispatchCardSet = payload => {
+    let oldArray = cardData;
+    let newArray = [...oldArray, payload];
+    setCardData(newArray);
+    setNewCard({ linkHref: "", linkName: "" });
+  };
+
   const linkImageStyle = {
     background: "url('https://bit.ly/2CJMRoS')"
   };
