@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "./App.css";
+import LinkCard from "./components/LinkCard";
 
 const App = () => {
   const [cardData, setCardData] = useState([
@@ -13,10 +14,6 @@ const App = () => {
     let newArray = [...oldArray, payload];
     setCardData(newArray);
     setNewCard({ linkHref: "", linkName: "" });
-  };
-
-  const linkImageStyle = {
-    background: "url('https://bit.ly/2CJMRoS')"
   };
 
   return (
@@ -73,14 +70,7 @@ const App = () => {
           </form>
         </div>
         <div className="rightContent">
-          <div className="linkCard">
-            <div className="linkCardImage" style={{ linkImageStyle }} />
-            <div className="linkCardLink">
-              <h2>
-                <a href="/#">My link</a>
-              </h2>
-            </div>
-          </div>
+          <LinkCard />
         </div>
       </main>
     </Fragment>
