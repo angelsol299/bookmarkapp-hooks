@@ -50,6 +50,7 @@ const App = () => {
               </label>
               <input
                 value={newCard.linkHref}
+                onChange={e => setNewCard}
                 type="text"
                 name="linkTitle"
                 minLength="7"
